@@ -1,5 +1,3 @@
-
-
 # R-notes
 Simple notes for R users
 

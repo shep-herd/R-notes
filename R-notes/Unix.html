@@ -191,37 +191,36 @@ $(document).ready(function () {
 
 <div id="TOC">
 <ul>
-<li><a href="#what-and-why">1. WHAT AND WHY</a></li>
-<li><a href="#overview">1.1 Overview</a></li>
+<li><a href="#overview">1. OVERVIEW</a></li>
+<li><a href="#what-and-why">1.1 What and why</a></li>
 <li><a href="#software">1.2 Software</a></li>
-<li><a href="#how">2. HOW</a></li>
-<li><a href="#basic-rules">2.1 Basic rules</a></li>
-<li><a href="#basic-actions">2.2 Basic actions</a></li>
-<li><a href="#bash-commands">3. BASH COMMANDS</a></li>
-<li><a href="#arguments">3.1 Arguments</a></li>
-<li><a href="#options">3.2 Options</a></li>
-<li><a href="#operators">3.3 Operators</a></li>
-<li><a href="#actions">3.4 Actions</a></li>
-<li><a href="#display">3.4.1 Display</a></li>
-<li><a href="#create">3.4.2 Create</a></li>
-<li><a href="#add">3.4.3 Add</a></li>
-<li><a href="#change">3.4.4 Change</a></li>
-<li><a href="#delete">3.4.5 Delete</a></li>
-<li><a href="#tips">3.5 Tips</a></li>
+<li><a href="#basic-rules">1.3 Basic rules</a></li>
+<li><a href="#actions-and-commands">2. ACTIONS AND COMMANDS</a></li>
+<li><a href="#decide-working-directory">2.1 Decide working directory</a></li>
+<li><a href="#display-content">2.2 Display content</a></li>
+<li><a href="#create-filesdirectories">2.3 Create files/directories</a></li>
+<li><a href="#add-content-to-files">2.4 Add content to files</a></li>
+<li><a href="#copy-filesdirectories">2.5 Copy files/directories</a></li>
+<li><a href="#move-filesdirectories">2.6 Move files/directories</a></li>
+<li><a href="#delete-filesdirectories">2.7 Delete files/directories</a></li>
+<li><a href="#shortcuts-of-path">2.8 Shortcuts of path</a></li>
+<li><a href="#common-options">2.9 Common options</a></li>
+<li><a href="#common-operators">2.10 Common operators</a></li>
+<li><a href="#tips">3. TIPS</a></li>
 </ul>
 </div>
 
 <p><a name="header"></a></p>
 <hr />
-<div id="what-and-why" class="section level3">
-<h3>1. WHAT AND WHY</h3>
-</div>
 <div id="overview" class="section level3">
-<h3>1.1 Overview</h3>
+<h3>1. OVERVIEW</h3>
+</div>
+<div id="what-and-why" class="section level3">
+<h3>1.1 What and why</h3>
 <p>-What is Bash?</p>
-<p>Bash is a Unix shell and also the name of the command language used to code in it.</p>
+<p>Bash is a <a href="https://en.wikipedia.org/wiki/Unix_shell">Unix shell</a> and also the name of the command language used to code in it.</p>
 <p>-Why should I manage my files in a Unix shell?</p>
-<p>To be productive when working with many files.</p>
+<p>To be more productive when working with many files.</p>
 <p>-Why should I use Bash?</p>
 <p>Bash is efficient and free. If you are a Mac or Linux user, Bash is the default shell; if you are a window user, Bash is free to install.</p>
 </div>
@@ -229,59 +228,30 @@ $(document).ready(function () {
 <h3>1.2 Software</h3>
 <p>Bash for Windows user <a href="https://www.gnu.org/software/bash/" class="uri">https://www.gnu.org/software/bash/</a></p>
 <p>If you install <a href="https://shep-herd.github.io/R-notes/Git.html">Git</a> in Windows, by default Bash will be installed too.</p>
-<hr />
-</div>
-<div id="how" class="section level3">
-<h3>2. HOW</h3>
 </div>
 <div id="basic-rules" class="section level3">
-<h3>2.1 Basic rules</h3>
+<h3>1.3 Basic rules</h3>
 <p>To use Bash, you should type Bash commands in a <a href="https://en.wikipedia.org/wiki/Command-line_interface">command line interface</a> (eg, Terminal of Mac, Bash Terminal, Terminal in Rstudio).</p>
 <p>If you use the Terminal in Rstudio, make sure you’ve set Git Bash as the default Terminal (Tools &gt; Global options &gt; Terminal &gt; Shell &gt; Git Bash).</p>
 <p>Bash commands can take arguments and options to make actions. eg:</p>
 <pre><code>$ rm -r [dir] </code></pre>
 <p>Here, <code>rm</code> is the command that takes the specified directory as the argument and <code>-r</code> as the option to remove the directory in a recursive way. Some actions don’t need arguments or options. Options that have more than one letters begin with <code>--</code>.</p>
-</div>
-<div id="basic-actions" class="section level3">
-<h3>2.2 Basic actions</h3>
-<p>Display, create, change, delete files.</p>
 <hr />
 </div>
-<div id="bash-commands" class="section level3">
-<h3>3. BASH COMMANDS</h3>
+<div id="actions-and-commands" class="section level3">
+<h3>2. ACTIONS AND COMMANDS</h3>
 </div>
-<div id="arguments" class="section level3">
-<h3>3.1 Arguments</h3>
-<p><code>.</code> the current/working directory</p>
-<p><code>..</code> the parent directory of the current directory</p>
-<p><code>~</code> the home directory, in windows its path can be /c/Users/user-name</p>
-<p><code>-</code> the directory you just left</p>
+<div id="decide-working-directory" class="section level3">
+<h3>2.1 Decide working directory</h3>
+<pre><code>cd [dir]</code></pre>
+<p>-set this <code>[dir]</code> as the working directory.</p>
+<pre><code>pwd</code></pre>
+<p>-print the current working directory</p>
 </div>
-<div id="options" class="section level3">
-<h3>3.2 Options</h3>
-<p><code>-a</code> all. eg, <code>ls -a</code> can list all the content including hidden files.</p>
-<p><code>-f</code> forceful. eg, <code>rm -f [file]</code> can remove protected file.</p>
-<p><code>-l</code> long. eg, <code>ls -l</code> can list the long info of the content.</p>
-<p><code>-r</code> recursive. eg, <code>rm -r [dir]</code> can remove a directory and all the files in it.</p>
-<p><code>-r</code> reverse. eg, <code>ls -r</code> can list the files in a reverse order.</p>
-<p><code>-t</code> time. eg, <code>ls -t</code> can list the content in a chronological order.</p>
-<p><code>--help</code> shows the manual of the command in Git Bash website.</p>
-</div>
-<div id="operators" class="section level3">
-<h3>3.3 Operators</h3>
-<p><code>?</code> represents a character. eg, <code>rm file.???.html</code> can remove all the files whose names follow the pattern file-001.html, file-002.html etc.</p>
-<p><code>*</code> represents a string. eg,<code>rm *.html</code> can remove all the files ending in html in the current directory.</p>
-<p><code>|</code> pipes commands. eg, <code>[cmd1] | [cmd2]</code> can pipe the results of <code>[cmd1]</code> to <code>[cmd2]</code>.</p>
-</div>
-<div id="actions" class="section level3">
-<h3>3.4 Actions</h3>
-</div>
-<div id="display" class="section level3">
-<h3>3.4.1 Display</h3>
+<div id="display-content" class="section level3">
+<h3>2.2 Display content</h3>
 <pre><code>ls [dir]</code></pre>
 <p>-list the content of <code>[dir]</code>. Without the argument, <code>ls</code> can list the content of the current directory.</p>
-<pre><code>pwd</code></pre>
-<p>-print the current directory</p>
 <pre><code>cat [file]</code></pre>
 <p>-view the text of <code>[file]</code> in the terminal.</p>
 <pre><code>cat [file1] [file2]</code></pre>
@@ -291,8 +261,8 @@ $(document).ready(function () {
 <pre><code>open [file/dir]</code></pre>
 <p>-open a file or a directory in associated application.</p>
 </div>
-<div id="create" class="section level3">
-<h3>3.4.2 Create</h3>
+<div id="create-filesdirectories" class="section level3">
+<h3>2.3 Create files/directories</h3>
 <pre><code>mkdir [dir]</code></pre>
 <p>-create a directory.</p>
 <pre><code>touch [file]</code></pre>
@@ -304,38 +274,63 @@ $(document).ready(function () {
 <pre><code>echo [text] &gt; [file]</code></pre>
 <p>-create a file writing the <code>[text]</code> as its content.</p>
 </div>
-<div id="add" class="section level3">
-<h3>3.4.3 Add</h3>
+<div id="add-content-to-files" class="section level3">
+<h3>2.4 Add content to files</h3>
 <pre><code>cat [file1] &gt;&gt; [file]</code></pre>
 <p>-append the content of <code>[file1]</code> to <code>[file]</code>.</p>
-<pre><code>echo [text] &gt;&gt; [file]</code></pre>
+<pre><code>echo &quot;[text]&quot; &gt;&gt; [file]</code></pre>
 <p>-append the <code>[text]</code> to <code>[file]</code>.</p>
 </div>
-<div id="change" class="section level3">
-<h3>3.4.4 Change</h3>
-<pre><code>cd [dir]</code></pre>
-<p>-set this <code>[dir]</code> as the current directory.</p>
+<div id="copy-filesdirectories" class="section level3">
+<h3>2.5 Copy files/directories</h3>
 <pre><code>cp [file1] [file2]</code></pre>
-<p>-copy <code>[file1]</code> to become <code>[file2]</code>.</p>
+<p>-copy <code>[file1]</code> and paste it with the path and name of <code>[file2]</code>.</p>
 <pre><code>cp [file/dir1] [dir2]</code></pre>
-<p>-copy <code>[file/dir1]</code> into <code>[dir2]</code>.</p>
-<pre><code>mv [file1] [file2]</code></pre>
-<p>-move <code>[file1]</code> to become <code>[file2]</code>. This action can be used to rename the <code>[file1]</code> with the name of <code>[file2]</code>.</p>
-<pre><code>mv [file/dir1] [dir2]</code></pre>
-<p>-move <code>[file/dir1]</code> into <code>[dir2]</code>. This action can be used to rename the <code>[dir1]</code> with the name of <code>[dir2]</code>, if there’s no such directory with the name of <code>[dir2]</code> before the action.</p>
+<p>-copy <code>[file/dir1]</code> and paste it into a existing directory <code>[dir2]</code>.</p>
 </div>
-<div id="delete" class="section level3">
-<h3>3.4.5 Delete</h3>
+<div id="move-filesdirectories" class="section level3">
+<h3>2.6 Move files/directories</h3>
+<pre><code>mv [file1] [file2]</code></pre>
+<p>-cut <code>[file1]</code> and paste it with the path and name of <code>[file2]</code>. This action can be used to rename <code>[file1]</code> with the name of <code>[file2]</code>.</p>
+<pre><code>mv [file/dir1] [dir2]</code></pre>
+<p>-cut <code>[file/dir1]</code> and paste it into <code>[dir2]</code>. This action can be used to rename the <code>[dir1]</code> with the name of <code>[dir2]</code>, if there no exists such a directory <code>[dir2]</code>.</p>
+</div>
+<div id="delete-filesdirectories" class="section level3">
+<h3>2.7 Delete files/directories</h3>
 <pre><code>rm [file]</code></pre>
 <p>-remove the <code>[file]</code> permanently.</p>
 <pre><code>rm -r [dir]</code></pre>
 <p>-remove the <code>[dir]</code> and all the files inside it permanently.</p>
 </div>
+<div id="shortcuts-of-path" class="section level3">
+<h3>2.8 Shortcuts of path</h3>
+<p><code>.</code> the current/working directory</p>
+<p><code>..</code> the parent directory of the current directory</p>
+<p><code>~</code> the home directory, in windows its path can be /c/Users/user-name</p>
+<p><code>-</code> the directory you just left</p>
+</div>
+<div id="common-options" class="section level3">
+<h3>2.9 Common options</h3>
+<p><code>-a</code> all. eg, <code>ls -a</code> can list all the content including hidden files.</p>
+<p><code>-f</code> forceful. eg, <code>rm -f [file]</code> can remove protected file.</p>
+<p><code>-l</code> long. eg, <code>ls -l</code> can list the long info of the content.</p>
+<p><code>-r</code> recursive. eg, <code>rm -r [dir]</code> can remove a directory and all the files in it.</p>
+<p><code>-r</code> reverse. eg, <code>ls -r</code> can list the files in a reverse order.</p>
+<p><code>-t</code> time. eg, <code>ls -t</code> can list the content in a chronological order.</p>
+<p><code>--help</code> shows the manual of the command in Git Bash website.</p>
+</div>
+<div id="common-operators" class="section level3">
+<h3>2.10 Common operators</h3>
+<p><code>?</code> represents a character. eg, <code>rm file.???.html</code> can remove all the files whose names follow the pattern file-001.html, file-002.html etc.</p>
+<p><code>*</code> represents a string. eg,<code>rm *.html</code> can remove all the files ending in html in the current directory.</p>
+<p><code>|</code> pipes commands. eg, <code>[cmd1] | [cmd2]</code> can pipe the results of <code>[cmd1]</code> to <code>[cmd2]</code>.</p>
+<hr />
+</div>
 <div id="tips" class="section level3">
-<h3>3.5 Tips</h3>
-<p>-If a file or a directory in a path has space in its name, quote the path in “” when type it.</p>
-<p>-Use tab key to fill the name of a file or a directory in a given path.</p>
-<p>-Use up and down key to get a former action command.</p>
+<h3>3. TIPS</h3>
+<p>-If a file or a directory in a path has spaces in its name, quote the path in “” when type it.</p>
+<p>-You can use the tab key to autocomplete the name of a file or a directory in a given path.</p>
+<p>-You can use up and down key to get in the cursor the the terminal former commands.</p>
 <hr />
 <p>REFERENCES:</p>
 <p>Gonsiorowski, Elsa (2016) <em>Unix and Git.</em> <a href="http://www.gonsie.com/unix-git/" class="uri">http://www.gonsie.com/unix-git/</a></p>
@@ -345,7 +340,7 @@ $(document).ready(function () {
 <p><a href="#header"><em>Back to top</em></a></p>
 <p><a href="https://shep-herd.github.io/"><em>Return to homepage</em></a></p>
 <hr />
-<p>First uploaded: 22-01-2019 Last updated: 23-01-2019</p>
+<p>First uploaded: 22-01-2019 Last updated: 25-01-2019</p>
 </div>
 
 

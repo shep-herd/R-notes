@@ -191,37 +191,36 @@ $(document).ready(function () {
 
 <div id="TOC">
 <ul>
-<li><a href="#what-and-why">1. WHAT AND WHY</a></li>
-<li><a href="#overview">1.1 Overview</a></li>
+<li><a href="#overview">1. OVERVIEW</a></li>
+<li><a href="#what-and-why">1.1 What and why</a></li>
 <li><a href="#software">1.2 Software</a></li>
 <li><a href="#structure">1.3 Structure</a></li>
-<li><a href="#how">2. HOW</a></li>
-<li><a href="#basic-rules">2.1 Basic rules</a></li>
-<li><a href="#basic-actions">2.2 Basic actions</a></li>
-<li><a href="#git-commands">3. GIT COMMANDS</a></li>
-<li><a href="#setup">3.1 Setup</a></li>
-<li><a href="#create-repo">3.2 Create repo</a></li>
-<li><a href="#save-changes">3.3 Save changes</a></li>
-<li><a href="#show-status">3.4 Show status</a></li>
-<li><a href="#show-history">3.5 Show history</a></li>
-<li><a href="#recall-changes">3.6 Recall changes</a></li>
-<li><a href="#undo-changes">3.7 Undo changes</a></li>
-<li><a href="#make-branches">3.8 Make branches</a></li>
-<li><a href="#sync-changes">3.9 Sync changes</a></li>
+<li><a href="#basic-rules">1.4 Basic rules</a></li>
+<li><a href="#actions-and-commands">2. ACTIONS AND COMMANDS</a></li>
+<li><a href="#setup">2.1 Setup</a></li>
+<li><a href="#create-repo">2.2 Create repo</a></li>
+<li><a href="#save-changes">2.3 Save changes</a></li>
+<li><a href="#show-status">2.4 Show status</a></li>
+<li><a href="#show-history">2.5 Show history</a></li>
+<li><a href="#recall-changes">2.6 Recall changes</a></li>
+<li><a href="#undo-changes">2.7 Undo changes</a></li>
+<li><a href="#make-branches">2.8 Make branches</a></li>
+<li><a href="#sync-changes">2.9 Sync changes</a></li>
+<li><a href="#tips">3. TIPS</a></li>
 </ul>
 </div>
 
 <p><a name="header"></a></p>
 <hr />
-<div id="what-and-why" class="section level3">
-<h3>1. WHAT AND WHY</h3>
-</div>
 <div id="overview" class="section level3">
-<h3>1.1 Overview</h3>
+<h3>1. OVERVIEW</h3>
+</div>
+<div id="what-and-why" class="section level3">
+<h3>1.1 What and why</h3>
 <p>-What are Git and GitHub?</p>
 <p>Git is a version control software. GitHub is a web-based software for version control using Git.</p>
 <p>-Why do I need a version control system?</p>
-<p>To have a timeline of the changes that have been made to the files in a project and get a historical version back whenever you need.</p>
+<p>To keep track of the changes that have been made to the files in a project and get a historical version back when you need.</p>
 <p>-Why should I use Git and GitHub?</p>
 <p>They are efficient, free, and have a big community that talks about and contributes to them.</p>
 </div>
@@ -234,34 +233,23 @@ $(document).ready(function () {
 <h3>1.3 Structure</h3>
 <p>With Git and GitHub, the different versions of a project can be divided to four sections:</p>
 <p><strong>Working directory + staging area (Git) + local repository (Git) + remote repository (GitHub).</strong></p>
-<hr />
-</div>
-<div id="how" class="section level3">
-<h3>2. HOW</h3>
+<p>The working directory is where you modify files; staging area (also named “index”) saves a version of the staged files for next commit; local repo saves historical versions of committed files; the remote repo saves historical versions of pushed files.</p>
 </div>
 <div id="basic-rules" class="section level3">
-<h3>2.1 Basic rules</h3>
-<p>To use Git, you can type Git commands in a <a href="https://en.wikipedia.org/wiki/Command-line_interface">command line interface</a> (eg, Terminal of Mac, Git Bash Terminal, Terminal in Rstudio) or use mouse in a <a href="https://en.wikipedia.org/wiki/Graphical_user_interface">graphic user interface</a> (eg, Git tab in Rstudio). But the latter cannot do all the actions that can be done by the former.</p>
+<h3>1.4 Basic rules</h3>
+<p>-To use Git, you can type Git commands in a <a href="https://en.wikipedia.org/wiki/Command-line_interface">command line interface</a> (eg, Terminal of Mac, Git Bash Terminal, Terminal in Rstudio) or use mouse in a <a href="https://en.wikipedia.org/wiki/Graphical_user_interface">graphic user interface</a> (eg, Git tab in Rstudio). But the latter cannot do all the actions that can be done by the former.</p>
 <p>If you use the Terminal in Rstudio, make sure you’ve set Git Bash as the default Terminal (Tools &gt; Global options &gt; Terminal &gt; Shell &gt; Git Bash).</p>
-<p>Git commands can take arguments and options to make actions. eg:</p>
+<p>-Git commands can take arguments and options to make actions. eg:</p>
 <pre><code>$ git reset --hard [commit]</code></pre>
-<p>Here, <code>git reset</code> is the command that takes a specified commit as the argument and <code>--hard</code> as the option to reset the commit in a ‘hard’ way, aka, undo all the commits after this specified commit, unstage everything and set the working directory as the commit. Some actions don’t need arguments or options. <a href="https://shep-herd.github.io/R-notes/Unix.html#options">Options</a> that have only one letter begin with <code>-</code>.</p>
-<p>Git doesn’t track files listed in the file <code>.gitignore</code>.</p>
-</div>
-<div id="basic-actions" class="section level3">
-<h3>2.2 Basic actions</h3>
-<p>Stage some of the modified files in working directory to the staging area.</p>
-<p>Commit all the staged files to the local repo.</p>
-<p>Push the committed files to the remote repo.</p>
-<p>Branch from the main version of development and work on that branched version.</p>
-<p>Recall committed versions in local and remote repos.</p>
+<p>Here, <code>git reset</code> is the command that takes a specified commit as the argument and <code>--hard</code> as the option to reset the commit in a ‘hard’ way, aka, undo all the commits after this specified commit, unstage everything and set the working directory as the commit. Some actions don’t need arguments or options. Options that have only one letter begin with <code>-</code>.</p>
+<p>-Git doesn’t track files listed in the file <code>.gitignore</code>.</p>
 <hr />
 </div>
-<div id="git-commands" class="section level3">
-<h3>3. GIT COMMANDS</h3>
+<div id="actions-and-commands" class="section level3">
+<h3>2. ACTIONS AND COMMANDS</h3>
 </div>
 <div id="setup" class="section level3">
-<h3>3.1 Setup</h3>
+<h3>2.1 Setup</h3>
 <pre><code>$ git config --global user.name &quot;[user-name]&quot;
 $ git config --global user.email &quot;[GitHub-email]&quot;</code></pre>
 <p>-identify yourself to Git. Every commit in Git will use this information. To use a different name or email in a specific project, run the command without the –global option.</p>
@@ -273,14 +261,14 @@ $ git config --global user.email &quot;[GitHub-email]&quot;</code></pre>
 <p>-check specific setting.</p>
 </div>
 <div id="create-repo" class="section level3">
-<h3>3.2 Create repo</h3>
+<h3>2.2 Create repo</h3>
 <pre><code>$ git init [project-name]</code></pre>
 <p>-create a new local repo with the specified name, aka, create a hidden subdirectory “.git” in the working directory. Without specifying the name, the repo is named by default “master”</p>
 <pre><code>$ git clone [URL]</code></pre>
 <p>-clone the entire remote repo with all the historical commits to working directory. “origin” is the default name Git gives to the server you cloned from.</p>
 </div>
 <div id="save-changes" class="section level3">
-<h3>3.3 Save changes</h3>
+<h3>2.3 Save changes</h3>
 <pre><code>$ git add [file]</code></pre>
 <p>-stage the file in working directory to staging area. Empty directories cannot be staged.</p>
 <pre><code>$ git add -all</code></pre>
@@ -293,7 +281,7 @@ $ git config --global user.email &quot;[GitHub-email]&quot;</code></pre>
 <p>-commit the new staged files while amending last commit. The massage can also be changed.</p>
 </div>
 <div id="show-status" class="section level3">
-<h3>3.4 Show status</h3>
+<h3>2.4 Show status</h3>
 <pre><code>$ git status</code></pre>
 <p>-show how the version in working directory is related to the versions in staging area and local repo. (“your branch is ahead by n commit”: your local repo has n commit that hasn’t been pushed yet; “your branch is up to date”: your local repo is the same as the remote repo; “untracked files”:Git don’t know, aka, never been staged or committed; “clean working directory”: none of the tracked files are modified)</p>
 <pre><code>$ git status -s</code></pre>
@@ -306,7 +294,7 @@ $ git config --global user.email &quot;[GitHub-email]&quot;</code></pre>
 <p>-show the exact differences between the staged and last committed version of all the files.</p>
 </div>
 <div id="show-history" class="section level3">
-<h3>3.5 Show history</h3>
+<h3>2.5 Show history</h3>
 <pre><code>$ git log</code></pre>
 <p>-show all commits have been done in a reverse chronological order.</p>
 <pre><code>$ git log -[n]</code></pre>
@@ -321,7 +309,7 @@ $ git config --global user.email &quot;[GitHub-email]&quot;</code></pre>
 <p>-show matadata and content changes in the specified commit.</p>
 </div>
 <div id="recall-changes" class="section level3">
-<h3>3.6 Recall changes</h3>
+<h3>2.6 Recall changes</h3>
 <pre><code>$ git checkout -- [file]</code></pre>
 <p>-undo changes in a modified file, aka, set the modified file to the last staged/committed version.</p>
 <pre><code>$ git checkout [commit] [file]</code></pre>
@@ -330,7 +318,7 @@ $ git config --global user.email &quot;[GitHub-email]&quot;</code></pre>
 <p>-move <code>HEAD</code> to the specified commit/branch and update the unchanged and committed files in working directory, so you can checkout what you’ve done in previous commits.(<code>HEAD</code> is a pointer to the last commit in the current branch. <code>HEAD~</code> is the parent of <code>HEAD</code>.)</p>
 </div>
 <div id="undo-changes" class="section level3">
-<h3>3.7 Undo changes</h3>
+<h3>2.7 Undo changes</h3>
 <pre><code>$ git reset [file]</code></pre>
 <p>-unstage a staged file, aka, set the staged file to the last commit version. This command is short for <code>git reset --mixed HEAD [file]</code> and the opposite of <code>git add [file]</code>.</p>
 <pre><code>$ git reset [commit] [file]</code></pre>
@@ -343,7 +331,7 @@ $ git config --global user.email &quot;[GitHub-email]&quot;</code></pre>
 <p>-undo all commits after the specified commit, unstage everything and set the working directory as the commit.</p>
 </div>
 <div id="make-branches" class="section level3">
-<h3>3.8 Make branches</h3>
+<h3>2.8 Make branches</h3>
 <pre><code>$ git branch</code></pre>
 <p>-list all local branches</p>
 <pre><code>$ git branch [branch-name]</code></pre>
@@ -352,7 +340,7 @@ $ git config --global user.email &quot;[GitHub-email]&quot;</code></pre>
 <p>-delete the specified branch.</p>
 </div>
 <div id="sync-changes" class="section level3">
-<h3>3.9 Sync changes</h3>
+<h3>2.9 Sync changes</h3>
 <pre><code>$ git push</code></pre>
 <p>-upload the local repo to the remote repo. If you made last commit with <code>--amend</code>, you need <code>git push -f</code> to upload.</p>
 <pre><code>$ git push [remote-repo] [branch]</code></pre>
@@ -363,6 +351,13 @@ $ git config --global user.email &quot;[GitHub-email]&quot;</code></pre>
 <p>-combine the specified branch history to the current branch.</p>
 <pre><code>$ git pull [remote-repo]</code></pre>
 <p>-download the specified remote repo to the local repo and combine it to the current branch.</p>
+<hr />
+</div>
+<div id="tips" class="section level3">
+<h3>3. TIPS</h3>
+<p>You can use <a href="https://shep-herd.github.io/R-notes/Unix.html#actions-and-commands">bash commands</a> in the terminal to do actions related with Git. eg, to create the <code>.gitignore</code> file, you can type <code>touch .gitignore</code>; to add file names to <code>.gitignore</code>, you can type <code>echo &quot;[file]&quot; &gt;&gt; .gitignore</code>.</p>
+<p>Most terminals permit copy and paste with mouse.</p>
+<p>If you use the Terminal of Rstudio, you can write the codes in a script, and then run the selected code (or the line where the cursor is) in the active terminal via Ctrl+Alt+Enter (also Cmd+Alt+Enter on the Mac).</p>
 <hr />
 <p>REFERENCES:</p>
 <p>Chacon, Scott and Straub, Ben (2014) <em>Pro Git.</em> <a href="https://git-scm.com/book/en/v2" class="uri">https://git-scm.com/book/en/v2</a></p>
