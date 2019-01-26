@@ -198,11 +198,11 @@ $(document).ready(function () {
 <li><a href="#actions-and-commands">2. ACTIONS AND COMMANDS</a></li>
 <li><a href="#decide-working-directory">2.1 Decide working directory</a></li>
 <li><a href="#display-content">2.2 Display content</a></li>
-<li><a href="#create-filesdirectories">2.3 Create files/directories</a></li>
+<li><a href="#create">2.3 Create</a></li>
 <li><a href="#add-content-to-files">2.4 Add content to files</a></li>
-<li><a href="#copy-filesdirectories">2.5 Copy files/directories</a></li>
-<li><a href="#move-filesdirectories">2.6 Move files/directories</a></li>
-<li><a href="#delete-filesdirectories">2.7 Delete files/directories</a></li>
+<li><a href="#copy">2.5 Copy</a></li>
+<li><a href="#move">2.6 Move</a></li>
+<li><a href="#delete">2.7 Delete</a></li>
 <li><a href="#shortcuts-of-path">2.8 Shortcuts of path</a></li>
 <li><a href="#common-options">2.9 Common options</a></li>
 <li><a href="#common-operators">2.10 Common operators</a></li>
@@ -261,8 +261,8 @@ $(document).ready(function () {
 <pre><code>open [file/dir]</code></pre>
 <p>-open a file or a directory in associated application.</p>
 </div>
-<div id="create-filesdirectories" class="section level3">
-<h3>2.3 Create files/directories</h3>
+<div id="create" class="section level3">
+<h3>2.3 Create</h3>
 <pre><code>mkdir [dir]</code></pre>
 <p>-create a directory.</p>
 <pre><code>touch [file]</code></pre>
@@ -281,22 +281,22 @@ $(document).ready(function () {
 <pre><code>echo &quot;[text]&quot; &gt;&gt; [file]</code></pre>
 <p>-append the <code>[text]</code> to <code>[file]</code>.</p>
 </div>
-<div id="copy-filesdirectories" class="section level3">
-<h3>2.5 Copy files/directories</h3>
+<div id="copy" class="section level3">
+<h3>2.5 Copy</h3>
 <pre><code>cp [file1] [file2]</code></pre>
 <p>-copy <code>[file1]</code> and paste it with the path and name of <code>[file2]</code>.</p>
 <pre><code>cp [file/dir1] [dir2]</code></pre>
 <p>-copy <code>[file/dir1]</code> and paste it into a existing directory <code>[dir2]</code>.</p>
 </div>
-<div id="move-filesdirectories" class="section level3">
-<h3>2.6 Move files/directories</h3>
+<div id="move" class="section level3">
+<h3>2.6 Move</h3>
 <pre><code>mv [file1] [file2]</code></pre>
 <p>-cut <code>[file1]</code> and paste it with the path and name of <code>[file2]</code>. This action can be used to rename <code>[file1]</code> with the name of <code>[file2]</code>.</p>
 <pre><code>mv [file/dir1] [dir2]</code></pre>
 <p>-cut <code>[file/dir1]</code> and paste it into <code>[dir2]</code>. This action can be used to rename the <code>[dir1]</code> with the name of <code>[dir2]</code>, if there no exists such a directory <code>[dir2]</code>.</p>
 </div>
-<div id="delete-filesdirectories" class="section level3">
-<h3>2.7 Delete files/directories</h3>
+<div id="delete" class="section level3">
+<h3>2.7 Delete</h3>
 <pre><code>rm [file]</code></pre>
 <p>-remove the <code>[file]</code> permanently.</p>
 <pre><code>rm -r [dir]</code></pre>
@@ -330,7 +330,8 @@ $(document).ready(function () {
 <h3>3. TIPS</h3>
 <p>-If a file or a directory in a path has spaces in its name, quote the path in “” when type it.</p>
 <p>-You can use the tab key to autocomplete the name of a file or a directory in a given path.</p>
-<p>-You can use up and down key to get in the cursor the the terminal former commands.</p>
+<p>-You can use the up and down keys to get former commands in the cursor of the the terminal.</p>
+<p>-The options with a single letter can be combined. <code>ls -tl</code> , <code>ls -lt</code> and <code>ls -t -l</code> can do the same action.</p>
 <hr />
 <p>REFERENCES:</p>
 <p>Gonsiorowski, Elsa (2016) <em>Unix and Git.</em> <a href="http://www.gonsie.com/unix-git/" class="uri">http://www.gonsie.com/unix-git/</a></p>
@@ -340,7 +341,7 @@ $(document).ready(function () {
 <p><a href="#header"><em>Back to top</em></a></p>
 <p><a href="https://shep-herd.github.io/"><em>Return to homepage</em></a></p>
 <hr />
-<p>First uploaded: 22-01-2019 Last updated: 25-01-2019</p>
+<p>First uploaded: 22-01-2019 Last updated: 26-01-2019</p>
 </div>
 
 

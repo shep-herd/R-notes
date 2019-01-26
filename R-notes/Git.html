@@ -271,8 +271,6 @@ $ git config --global user.email &quot;[GitHub-email]&quot;</code></pre>
 <h3>2.3 Save changes</h3>
 <pre><code>$ git add [file]</code></pre>
 <p>-stage the file in working directory to staging area. Empty directories cannot be staged.</p>
-<pre><code>$ git add -all</code></pre>
-<p>-stage all the files in working directory to staging area.</p>
 <pre><code>$ git commit -m &quot;[massage]&quot;</code></pre>
 <p>-commit all the staged files to local repo. A massage must be added when you commit.</p>
 <pre><code>$ git commit -m &quot;[massage]&quot; [file]</code></pre>
@@ -332,32 +330,28 @@ $ git config --global user.email &quot;[GitHub-email]&quot;</code></pre>
 </div>
 <div id="make-branches" class="section level3">
 <h3>2.8 Make branches</h3>
-<pre><code>$ git branch</code></pre>
-<p>-list all local branches</p>
 <pre><code>$ git branch [branch-name]</code></pre>
-<p>-create a new branch with the specified name.</p>
+<p>-create a new branch with the specified name. Without argument, this command lists all local branches.</p>
 <pre><code>$ git branch -d [branch]</code></pre>
 <p>-delete the specified branch.</p>
 </div>
 <div id="sync-changes" class="section level3">
 <h3>2.9 Sync changes</h3>
-<pre><code>$ git push</code></pre>
-<p>-upload the local repo to the remote repo. If you made last commit with <code>--amend</code>, you need <code>git push -f</code> to upload.</p>
 <pre><code>$ git push [remote-repo] [branch]</code></pre>
-<p>-upload the specified branch to the specified remote repo. If your working directory was cloned from the remote repo, by default the remote server is locally named “origin”.</p>
+<p>-upload the specified branch to the specified remote repo. Without arguments, all the commits made in the local repo will be upload to the remote repo</p>
 <pre><code>$ git fetch [remote-repo]</code></pre>
 <p>-download the specified remote repo to the local repo.</p>
 <pre><code>$ git merge [branch]</code></pre>
 <p>-combine the specified branch history to the current branch.</p>
 <pre><code>$ git pull [remote-repo]</code></pre>
-<p>-download the specified remote repo to the local repo and combine it to the current branch.</p>
+<p>-download the specified remote repo to the local repo and combine it to the current branch. Without arguments, all the commits made in the remote repo will be downloaded to the local repo and the working directory.</p>
 <hr />
 </div>
 <div id="tips" class="section level3">
 <h3>3. TIPS</h3>
-<p>You can use <a href="https://shep-herd.github.io/R-notes/Unix.html#actions-and-commands">bash commands</a> in the terminal to do actions related with Git. eg, to create the <code>.gitignore</code> file, you can type <code>touch .gitignore</code>; to add file names to <code>.gitignore</code>, you can type <code>echo &quot;[file]&quot; &gt;&gt; .gitignore</code>.</p>
-<p>Most terminals permit copy and paste with mouse.</p>
-<p>If you use the Terminal of Rstudio, you can write the codes in a script, and then run the selected code (or the line where the cursor is) in the active terminal via Ctrl+Alt+Enter (also Cmd+Alt+Enter on the Mac).</p>
+<p>-You can combine <a href="https://shep-herd.github.io/R-notes/Unix.html#common-options">options of bash commands</a> with git commands. eg, to stage all modified files, you can use <code>git add -a</code>; if you made last commit with <code>--amend</code> and git does not permit you sync changes, you can use <code>git push -f</code> to upload.</p>
+<p>-Most terminals permit copy and paste with mouse.</p>
+<p>-If you use the Terminal of Rstudio, you can write the codes in a script, and then run the selected code (or the line where the cursor is) in the active terminal via Ctrl+Alt+Enter (or Cmd+Alt+Enter on the Mac).</p>
 <hr />
 <p>REFERENCES:</p>
 <p>Chacon, Scott and Straub, Ben (2014) <em>Pro Git.</em> <a href="https://git-scm.com/book/en/v2" class="uri">https://git-scm.com/book/en/v2</a></p>
@@ -369,7 +363,7 @@ $ git config --global user.email &quot;[GitHub-email]&quot;</code></pre>
 <p><a href="#header"><em>Back to top</em></a></p>
 <p><a href="https://shep-herd.github.io/"><em>Return to homepage</em></a></p>
 <hr />
-<p>First uploaded: 22-01-2019 Last updated: 25-01-2019</p>
+<p>First uploaded: 22-01-2019 Last updated: 26-01-2019</p>
 </div>
 
 
