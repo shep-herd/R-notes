@@ -237,12 +237,12 @@ $(document).ready(function () {
 </div>
 <div id="basic-rules" class="section level3">
 <h3>1.4 Basic rules</h3>
-<p>-To use Git, you can type Git commands in a <a href="https://en.wikipedia.org/wiki/Command-line_interface">command line interface</a> (eg, Terminal of Mac, Git Bash Terminal, Terminal in Rstudio) or use mouse in a <a href="https://en.wikipedia.org/wiki/Graphical_user_interface">graphic user interface</a> (eg, Git tab in Rstudio). But the latter cannot do all the actions that can be done by the former.</p>
+<p>-To use Git, you can type Git commands in a <a href="https://en.wikipedia.org/wiki/Command-line_interface">command line interface</a> (eg, Terminal of Mac, Git Bash Terminal, Terminal in Rstudio) or use mouse in a <a href="https://en.wikipedia.org/wiki/Graphical_user_interface">graphic user interface</a> (eg, GitHb desktop, Git tab in Rstudio). But the latter cannot do all the actions that can be done by the former.</p>
 <p>If you use the Terminal in Rstudio, make sure you’ve set Git Bash as the default Terminal (Tools &gt; Global options &gt; Terminal &gt; Shell &gt; Git Bash).</p>
 <p>-Git commands can take arguments and options to make actions. eg:</p>
 <pre><code>$ git reset --hard [commit]</code></pre>
 <p>Here, <code>git reset</code> is the command that takes a specified commit as the argument and <code>--hard</code> as the option to reset the commit in a ‘hard’ way, aka, undo all the commits after this specified commit, unstage everything and set the working directory as the commit. Some actions don’t need arguments or options. Options that have only one letter begin with <code>-</code>.</p>
-<p>-Git doesn’t track files listed in the file <code>.gitignore</code>.</p>
+<p>-Git ignores untracked files listed in the file <code>.gitignore</code> (for tracked files, you can clean the cache <code>git rm -r --cached .</code> and then Git will ignore all files listed in the file <code>.gitignore</code>).</p>
 <hr />
 </div>
 <div id="actions-and-commands" class="section level3">
@@ -351,7 +351,7 @@ $ git config --global user.email &quot;[GitHub-email]&quot;</code></pre>
 </div>
 <div id="tips" class="section level3">
 <h3>3. TIPS</h3>
-<p>-You can combine <a href="https://shep-herd.github.io/R-something/unix.html#common-options">options of bash commands</a> with git commands. eg, to stage all modified files, you can use <code>git add -a</code>; if you made last commit with <code>--amend</code> and git does not permit you sync changes, you can use <code>git push -f</code> to upload.</p>
+<p>-You can combine <a href="https://shep-herd.github.io/R-something/unix.html#common-options">options of bash commands</a> with git commands. eg, to stage all modified files in the working directory, you can use <code>git add .</code>; if you made last commit with <code>--amend</code> and git does not permit you sync changes, you can use <code>git push -f</code> to upload.</p>
 <p>-Most terminals permit copy and paste with mouse.</p>
 <p>-If you use the Terminal of Rstudio, you can write the codes in a script, and then run the selected code (or the line where the cursor is) in the active terminal via Ctrl+Alt+Enter (or Cmd+Alt+Enter on the Mac).</p>
 <hr />
@@ -359,7 +359,7 @@ $ git config --global user.email &quot;[GitHub-email]&quot;</code></pre>
 <p><a href="#header"><em>Back to top</em></a></p>
 <p><a href="https://shep-herd.github.io/"><em>Return to homepage</em></a></p>
 <hr />
-<p>First uploaded: 22-01-2019 Last updated: 05-04-2019 <br></p>
+<p>First uploaded: 22-01-2019 Last updated: 23-04-2019 <br></p>
 </div>
 
 
