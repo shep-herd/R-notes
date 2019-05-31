@@ -222,8 +222,7 @@ $(document).ready(function () {
 <div id="code" class="section level3">
 <h3>3. Code</h3>
 <pre class="r"><code>#Packages
-library(rvest) #functions: read_html, html_nudes, html_table
-library(purrr) #function: map</code></pre>
+library(rvest) #functions: read_html, html_nudes, html_table</code></pre>
 <pre class="r"><code>#Get the web and save it with read_html 
 web &lt;- &quot;https://en.wikipedia.org/wiki/List_of_Spanish_monarchs&quot;
 s &lt;- read_html(web)
@@ -250,10 +249,10 @@ tab</code></pre>
 <pre class="r"><code>#Select the tables that contain the information we need 
 tab &lt;- tab[c(4:5, 7:12)]
 
-#Apply html_table to each element of the list and convert all the HTML tables into data frame 
-tab &lt;- map(tab, html_table)
+#Apply html_table to each element of the list and convert all the HTML tables into data frames 
+tab &lt;- lapply(tab, html_table)
 
-#Combine the data frames into one data frames by row
+#Combine the data frames into one data frame by row
 tab &lt;- do.call(rbind, tab)</code></pre>
 </div>
 <div id="result-and-discussion" class="section level3">
@@ -840,7 +839,7 @@ NA
 </tr>
 </tbody>
 </table>
-<p><br> The codes are recyclable and you can practise them with the multiple tables in the list of French monarchs from Wikipedia <a href="https://en.wikipedia.org/wiki/List_of_French_monarchs" class="uri">https://en.wikipedia.org/wiki/List_of_French_monarchs</a>. Don’t forget you need to check what are the tables you really want before combining them.</p>
+<p><br> The codes are recyclable and you can practise them with the multiple tables in the list of Spanish dishes from Wikipedia <a href="https://en.wikipedia.org/wiki/List_of_Spanish_dishes" class="uri">https://en.wikipedia.org/wiki/List_of_Spanish_dishes</a>. Don’t forget you need to check what are the tables you really want before combining them.</p>
 <hr />
 <p><em>END</em></p>
 <p><a href="#header"><em>Back to top</em></a></p>
