@@ -839,13 +839,18 @@ tab$End &lt;- str_extract(tab$`Reign end`, &quot;\\d{4}&quot;)
 tab[c(&quot;Lifespan&quot;, &quot;Start&quot;, &quot;End&quot;)] &lt;- sapply(tab[c(&quot;Lifespan&quot;, &quot;Start&quot;, &quot;End&quot;)], as.numeric)
 
 #Detect repeated values
+#duplicated() gives Boolean values about if a element/vector is repeated 
+#which() gives the order of the TRUE value
+#rev() reverses a vector
 which(duplicated(tab$Name))</code></pre>
 <pre><code>## [1] 12 18</code></pre>
+<pre class="r"><code>which(duplicated(rev(tab$Name)))</code></pre>
+<pre><code>## [1]  9 15</code></pre>
 <pre class="r"><code>#Fill the end year of Philip V in the first appearance by that of the second
 tab$End[10] &lt;- tab$End[12]
 
 #Remove the repeted Philip V and Ferdinand VII
-tab &lt;- tab[-c(12, 18), ]
+tab &lt;- tab[-c(12, 16), ]
 
 #Get the Reighspan
 tab &lt;- mutate(tab, Reignspan= End-Start)
@@ -1310,35 +1315,6 @@ Bourbon
 </tr>
 <tr>
 <td style="text-align:left;">
-Ferdinand VII
-</td>
-<td style="text-align:left;">
-the Desired and the Felon King
-</td>
-<td style="text-align:left;">
-Fernando VII
-</td>
-<td style="text-align:left;">
-male
-</td>
-<td style="text-align:left;">
-Bourbon
-</td>
-<td style="text-align:right;">
-1808
-</td>
-<td style="text-align:right;">
-1808
-</td>
-<td style="text-align:right;">
-0
-</td>
-<td style="text-align:right;">
-48
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
 Joseph I
 </td>
 <td style="text-align:left;">
@@ -1364,6 +1340,35 @@ Bonaparte
 </td>
 <td style="text-align:right;">
 76
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Ferdinand VII
+</td>
+<td style="text-align:left;">
+the Desired and the Felon King
+</td>
+<td style="text-align:left;">
+Fernando VII
+</td>
+<td style="text-align:left;">
+male
+</td>
+<td style="text-align:left;">
+Bourbon
+</td>
+<td style="text-align:right;">
+1813
+</td>
+<td style="text-align:right;">
+1833
+</td>
+<td style="text-align:right;">
+20
+</td>
+<td style="text-align:right;">
+48
 </td>
 </tr>
 <tr>
@@ -1547,7 +1552,7 @@ NA
 <p><a href="#header"><em>Back to top</em></a></p>
 <p><a href="https://shep-herd.github.io/"><em>Return to homepage</em></a></p>
 <hr />
-<p>First uploaded: 25-05-2019 Last updated: 31-05-2019 <br></p>
+<p>First uploaded: 25-05-2019 Last updated: 01-06-2019 <br></p>
 </div>
 
 
