@@ -844,8 +844,8 @@ tab[c(&quot;Lifespan&quot;, &quot;Start&quot;, &quot;End&quot;)] &lt;- sapply(ta
 #rev() reverses a vector
 which(duplicated(tab$Name))</code></pre>
 <pre><code>## [1] 12 18</code></pre>
-<pre class="r"><code>which(duplicated(rev(tab$Name)))</code></pre>
-<pre><code>## [1]  9 15</code></pre>
+<pre class="r"><code>which(rev(duplicated(rev(tab$Name))))</code></pre>
+<pre><code>## [1] 10 16</code></pre>
 <pre class="r"><code>#Fill the end year of Philip V in the first appearance by that of the second
 tab$End[10] &lt;- tab$End[12]
 
